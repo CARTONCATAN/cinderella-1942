@@ -68,6 +68,52 @@
   }
 }
 
+/* -- class-based dark mode (for toggle) -- */
+.dark-mode {
+    --purple: #2a1a0a;
+    --purple-dark: #1a0d00;
+    --purple-light: #3a2a1a;
+    --accent: #F5A623;
+    --blue-hero: #0a2340;
+    --dark: #10101a;
+    --white: #18192A;
+    --off-white: #23243a;
+    --text-dark: #f7f8fc;
+    --text-gray: #b0b3c6;
+    --shadow-sm: 0 2px 12px rgba(0,0,0,0.18);
+    --shadow-md: 0 8px 30px rgba(0,0,0,0.28);
+    --shadow-lg: 0 20px 56px rgba(0,0,0,0.38);
+}
+.dark-mode body { background: var(--white); color: var(--text-dark); }
+.dark-mode .navbar { background: var(--purple); border-bottom: 1px solid rgba(255,255,255,0.08); }
+.dark-mode .nav-links { background: rgba(30,30,40,0.18); border: 1px solid rgba(255,255,255,0.08); }
+.dark-mode .team-card, .dark-mode .mentor-card, .dark-mode .content-section, .dark-mode .footer { background: var(--off-white); color: var(--text-dark); box-shadow: var(--shadow-sm); }
+.dark-mode .section-title, .dark-mode .section-subtitle { color: var(--text-dark); }
+.dark-mode .hero-bg img { filter: brightness(0.7) contrast(1.1); }
+.dark-mode .footer { background: var(--purple-dark); color: var(--text-gray); }
+
+/* Dark mode toggle button */
+.dark-toggle {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.12);
+    color: var(--white);
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-left: 12px;
+}
+.dark-toggle i { font-size: 1.05rem; }
+.dark-toggle:hover { transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+
+@media (max-width: 968px) {
+    .dark-toggle { display: none; }
+}
+
 /* --- Reset & Base --- */
 *, *::before, *::after {
     margin: 0;

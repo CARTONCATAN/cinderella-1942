@@ -142,6 +142,57 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // --- Dark mode toggle (inject button into navbar) ---
+    (function() {
+        const nav = document.querySelector('.nav-container');
+        if (!nav) return;
+
+        const btn = document.createElement('button');
+        btn.id = 'darkToggle';
+        btn.className = 'dark-toggle';
+        btn.setAttribute('aria-label', 'Toggle dark mode');
+        btn.innerHTML = '<i class="fas fa-moon"></i>';
+
+        // Insert before hamburger so it's visible on wide screens
+        const hamburgerBtn = document.getElementById('hamburger');
+        if (hamburgerBtn && hamburgerBtn.parentNode) {
+            hamburgerBtn.parentNode.insertBefore(btn, hamburgerBtn);
+        } else {
+            nav.appendChild(btn);
+        }
+
+        const root = document.documentElement;
+
+        function setIcon(isDark) {
+            btn.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+        }
+
+        function applyTheme(theme) {
+            if (theme === 'dark') {
+                root.classList.add('dark-mode');
+                setIcon(true);
+            } else {
+                root.classList.remove('dark-mode');
+                setIcon(false);
+            }
+        }
+
+        // Initialize from localStorage or system preference
+        const stored = localStorage.getItem('theme');
+        if (stored) {
+            applyTheme(stored);
+        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            applyTheme('dark');
+        }
+
+        btn.addEventListener('click', () => {
+            const isDark = root.classList.contains('dark-mode');
+            const next = isDark ? 'light' : 'dark';
+            applyTheme(next);
+            try { localStorage.setItem('theme', next); } catch (e) { /* ignore */ }
+        });
+    })();
+
     // --- Stat counter animation ---
     const statNumbers = document.querySelectorAll('.stat-number');
     if (statNumbers.length > 0) {
