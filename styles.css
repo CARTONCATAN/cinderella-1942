@@ -55,6 +55,8 @@ ul { list-style: none; }
 img {
     max-width: 100%;
     display: block;
+    -webkit-user-drag: none;
+    user-drag: none;
 }
 
 .container {
@@ -947,9 +949,9 @@ img {
 }
 
 .team-card .role {
-    font-size: 0.82rem;
-    color: var(--purple);
-    font-weight: 500;
+    font-size: 0.85rem;
+    color: #1a1a2e;
+    font-weight: 600;
 }
 
 .team-card p {

@@ -2,6 +2,11 @@
 // CINDERELLA TEAM 1942 - MAIN SCRIPT
 // ========================================
 
+// Prevent image dragging
+document.addEventListener('dragstart', (e) => {
+    if (e.target.tagName === 'IMG') e.preventDefault();
+});
+
 document.addEventListener('DOMContentLoaded', () => {
 
     // --- Video play button ---
