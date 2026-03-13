@@ -251,9 +251,8 @@ img {
 
 .jet-silhouette {
     position: absolute;
-    top: 32%;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 12%;
+    right: 5%;
     animation: fly 10s ease-in-out infinite;
     z-index: 2;
 }
@@ -275,6 +274,11 @@ img {
 }
 
 @keyframes fly {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(15px, -10px); }
+}
+
+@keyframes flyMobile {
     0%, 100% { transform: translateX(-50%) translateY(0); }
     50% { transform: translateX(-50%) translateY(-10px); }
 }
@@ -1316,7 +1320,7 @@ img {
         left: -100px;
     }
 
-    .jet-silhouette { top: 28%; left: 50%; transform: translateX(-50%); }
+    .jet-silhouette { top: 28%; left: 50%; right: auto; transform: translateX(-50%); animation: flyMobile 10s ease-in-out infinite; }
     .jet-silhouette img { height: 180px; }
 
     .sponsors-image { max-width: 85%; }
@@ -1363,7 +1367,7 @@ img {
         left: -60px;
     }
 
-    .jet-silhouette { top: 26%; left: 50%; transform: translateX(-50%); }
+    .jet-silhouette { top: 26%; left: 50%; right: auto; transform: translateX(-50%); animation: flyMobile 10s ease-in-out infinite; }
     .jet-silhouette img { height: 150px; }
 
     .robot-reveal-section { padding: 40px 0; }
