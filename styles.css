@@ -866,7 +866,7 @@ img {
 .page-header::after {
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: -8px; /* moved down to sit lower under the header */
     left: 0;
     right: 0;
     height: 4px;
