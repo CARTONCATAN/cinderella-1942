@@ -830,17 +830,19 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 16px;
-    padding: 12px 24px;
+    gap: 12px;
+    padding: 8px 16px;
     text-align: center;
     flex-wrap: wrap;
 }
 
 .footer-bottom-logo {
-    height: 120px;
+    height: 60px;
     object-fit: contain;
-    opacity: 0.85;
+    opacity: 0.95;
 }
+
+.footer-bottom p { color: rgba(255,255,255,0.7); margin: 0; font-size: 0.9rem; }
 
 .footer-credit {
     font-size: 0.78rem;
@@ -853,7 +855,7 @@ img {
    ======================================== */
 .page-header {
     padding: 130px 0 60px;
-    background: var(--off-white);
+    background: linear-gradient(160deg, #0D3B7A 0%, #1251A3 25%, #1565C0 50%, #1976D2 75%, #2196F3 100%);
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -867,22 +869,22 @@ img {
     bottom: 0;
     left: 0;
     right: 0;
-    height: 6px;
-    background: linear-gradient(90deg, #0D3B7A, #1565C0, #42A5F5);
+    height: 4px;
+    background: linear-gradient(90deg, var(--purple), var(--purple-light), var(--accent));
 }
 
 .page-header h1 {
     font-family: 'Orbitron', monospace;
     font-size: clamp(1.6rem, 4vw, 2.5rem);
     font-weight: 800;
-    color: var(--text-dark);
+    color: var(--white);
     letter-spacing: 4px;
 }
 
 .page-header p {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 1.05rem;
-    color: var(--text-gray);
+    color: rgba(255,255,255,0.9);
     margin-top: 6px;
     letter-spacing: 0.6px;
 }
