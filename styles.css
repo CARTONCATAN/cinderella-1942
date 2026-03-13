@@ -1254,9 +1254,20 @@ img {
     100% { transform: translateY(-100vh) scale(1); opacity: 0; }
 }
 
-/* ==============
-   ROBOT SLIDER
-   ============== */
+.dept-card-center {
+    grid-column: 1 / -1;
+    max-width: 270px;
+    margin: 0 auto;
+}
+
+.slider-img-mobile { display: none; }
+.slider-img-desktop { display: block; }
+
+@media (max-width: 768px) {
+    .slider-img-desktop { display: none; }
+    .slider-img-mobile { display: block; }
+}
+
 .robot-slider {
     position: relative;
     display: flex;
