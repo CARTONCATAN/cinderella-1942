@@ -251,7 +251,7 @@ img {
 
 .jet-silhouette {
     position: absolute;
-    top: 8%;
+    top: 22%;
     left: 50%;
     transform: translateX(-50%);
     animation: fly 10s ease-in-out infinite;
@@ -1316,7 +1316,7 @@ img {
         left: -100px;
     }
 
-    .jet-silhouette { top: 10%; left: 50%; transform: translateX(-50%); }
+    .jet-silhouette { top: 20%; left: 50%; transform: translateX(-50%); }
     .jet-silhouette img { height: 180px; }
 
     .sponsors-image { max-width: 85%; }
@@ -1363,7 +1363,7 @@ img {
         left: -60px;
     }
 
-    .jet-silhouette { top: 10%; left: 50%; transform: translateX(-50%); }
+    .jet-silhouette { top: 18%; left: 50%; transform: translateX(-50%); }
     .jet-silhouette img { height: 150px; }
 
     .robot-reveal-section { padding: 40px 0; }
