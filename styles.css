@@ -1267,14 +1267,20 @@ img {
         flex-direction: column;
         padding: 14px;
         gap: 2px;
-        transform: translateY(-120%);
-        transition: var(--transition);
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-10px);
+        transition: opacity 0.25s ease, transform 0.25s ease;
         border-radius: 0;
         border-bottom: 2px solid rgba(255,255,255,0.2);
         z-index: 999;
     }
 
-    .nav-links.active { transform: translateY(0); }
+    .nav-links.active {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
     .nav-links a { padding: 10px 14px; font-size: 0.95rem; }
     .hamburger { display: flex; }
     .nav-brand { display: none; }
