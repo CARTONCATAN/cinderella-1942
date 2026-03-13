@@ -92,6 +92,7 @@ img {
     justify-content: space-between;
     height: 76px;
     position: relative;
+    overflow: visible;
 }
 
 .nav-logo {
@@ -100,7 +101,7 @@ img {
 }
 
 .nav-logo-img {
-    height: 130px;
+    height: 64px;
     width: auto;
     display: block;
     object-fit: contain;
@@ -1256,7 +1257,7 @@ img {
 @media (max-width: 968px) {
     .nav-container { height: 64px; }
 
-    .nav-logo-img { height: 90px; }
+    .nav-logo-img { height: 52px; }
 
     .nav-links {
         position: fixed;
@@ -1323,7 +1324,7 @@ img {
 
 @media (max-width: 640px) {
     .nav-container { height: 56px; }
-    .nav-logo-img { height: 72px; }
+    .nav-logo-img { height: 44px; }
 
     .nav-links { top: 56px; }
 
