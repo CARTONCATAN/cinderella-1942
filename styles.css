@@ -103,7 +103,7 @@ img {
 }
 
 .nav-logo-img {
-    height: 64px;
+    height: 85px;
     width: auto;
     display: block;
     object-fit: contain;
@@ -160,7 +160,7 @@ img {
 .first-text sup { font-size: 0.5em; }
 
 .first-logo-img {
-    height: 56px;
+    height: 75px;
     width: auto;
     display: block;
     object-fit: contain;
