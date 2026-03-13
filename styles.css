@@ -1254,9 +1254,13 @@ img {
    RESPONSIVE
    ============== */
 @media (max-width: 968px) {
+    .nav-container { height: 64px; }
+
+    .nav-logo-img { height: 90px; }
+
     .nav-links {
         position: fixed;
-        top: 56px;
+        top: 64px;
         left: 0;
         right: 0;
         background: var(--purple);
@@ -1267,6 +1271,7 @@ img {
         transition: var(--transition);
         border-radius: 0;
         border-bottom: 2px solid rgba(255,255,255,0.2);
+        z-index: 999;
     }
 
     .nav-links.active { transform: translateY(0); }
@@ -1274,7 +1279,10 @@ img {
     .hamburger { display: flex; }
     .nav-brand { display: none; }
 
-    .reveal-content { flex-direction: column; }
+    .hero { padding-top: 64px; }
+
+    .reveal-content { flex-direction: column; gap: 30px; }
+    .reveal-video { width: 100%; flex: unset; }
     .about-grid { grid-template-columns: 1fr; }
     .stats-grid { grid-template-columns: repeat(2, 1fr); }
 
@@ -1288,48 +1296,94 @@ img {
     }
 
     .timeline-dot { left: 16px; }
+
+    .castle-silhouette {
+        width: 320px;
+        height: auto;
+        right: -30px;
+        bottom: -40px;
+    }
+
+    .gears-combined {
+        width: 440px;
+        bottom: -60px;
+        left: -100px;
+    }
+
+    .jet-silhouette img { height: 140px; }
+
+    .sponsors-image { max-width: 85%; }
+
+    .footer-bottom-logo { height: 80px; }
+
+    .dept-grid { grid-template-columns: 1fr; }
+
+    .page-header { padding: 100px 0 40px; }
 }
 
 @media (max-width: 640px) {
+    .nav-container { height: 56px; }
+    .nav-logo-img { height: 72px; }
+
+    .nav-links { top: 56px; }
+
+    .hero { padding-top: 56px; min-height: 100svh; }
+
+    .hero-logo-img { width: min(420px, 90vw); }
+
     .stats-grid { grid-template-columns: 1fr; }
 
-    .wing { font-size: 60px; }
+    .robots-grid { grid-template-columns: 1fr; }
 
-    .pumpkin-body {
-        width: 110px;
-        height: 100px;
+    .sponsors-row { gap: 18px; }
+    .sponsor-logo { width: 80px; height: 80px; }
+    .sponsor-logo img { max-width: 70px; max-height: 70px; }
+    .sponsors-top .sponsor-logo { width: 100px; height: 100px; }
+    .sponsors-top .sponsor-logo img { max-width: 90px; max-height: 90px; }
+    .sponsors-image { max-width: 95%; }
+    .sponsors-image-wrap { padding-left: 0; }
+
+    .castle-silhouette {
+        width: 200px;
+        right: -20px;
+        bottom: -20px;
+        opacity: 0.7;
     }
 
-    .star-circle {
-        width: 50px;
-        height: 50px;
+    .gears-combined {
+        width: 300px;
+        bottom: -30px;
+        left: -60px;
     }
 
-    .star-circle i { font-size: 22px; }
+    .jet-silhouette { top: 8%; right: 2%; }
+    .jet-silhouette img { height: 90px; }
 
-    .team-number-banner {
-        font-size: 1.3rem;
-        padding: 3px 22px;
-    }
+    .robot-reveal-section { padding: 40px 0; }
+    .reveal-text h3 { font-size: 1.1rem; }
+
+    .content-section { padding: 40px 0; }
+    .section-title { font-size: 1.3rem; letter-spacing: 2px; }
+
+    .page-header { padding: 80px 0 30px; }
+    .page-header h1 { font-size: 1.4rem; letter-spacing: 2px; }
+
+    .team-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .team-card { padding: 18px 12px; }
+    .team-card .avatar { width: 70px; height: 70px; font-size: 1.2rem; }
+
+    .dept-grid { grid-template-columns: 1fr; }
+    .dept-card { padding: 20px; }
 
     .robots-grid { grid-template-columns: 1fr; }
-    .sponsors-row { gap: 25px; }
-    .sponsor-logo { width: 100px; height: 100px; }
-    .sponsor-logo img { max-width: 90px; max-height: 90px; }
-    .sponsors-top .sponsor-logo { width: 130px; height: 130px; }
-    .sponsors-top .sponsor-logo img { max-width: 120px; max-height: 120px; }
 
-    .gear-1 {
-        width: 520px;
-        height: 520px;
-        bottom: -90px;
-        left: -50px;
-    }
+    .footer-bottom { padding: 10px 16px; gap: 8px; }
+    .footer-bottom-logo { height: 60px; }
+    .footer-credit { font-size: 0.72rem; }
 
-    .gear-2 {
-        width: 380px;
-        height: 380px;
-        bottom: 80px;
-        left: 110px;
-    }
+    .timeline-content { padding: 14px 16px; }
+    .timeline-content h3 { font-size: 0.85rem; }
+
+    .cta-content h2 { font-size: 1.3rem; }
+    .btn { padding: 10px 20px; font-size: 0.9rem; }
 }
