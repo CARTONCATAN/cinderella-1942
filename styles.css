@@ -22,6 +22,52 @@
     --radius: 16px;
 }
 
+/* === DARK MODE === */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --purple: #2a1a0a;
+    --purple-dark: #1a0d00;
+    --purple-light: #3a2a1a;
+    --accent: #F5A623;
+    --blue-hero: #0a2340;
+    --dark: #10101a;
+    --white: #18192A;
+    --off-white: #23243a;
+    --text-dark: #f7f8fc;
+    --text-gray: #b0b3c6;
+    --shadow-sm: 0 2px 12px rgba(0,0,0,0.18);
+    --shadow-md: 0 8px 30px rgba(0,0,0,0.28);
+    --shadow-lg: 0 20px 56px rgba(0,0,0,0.38);
+  }
+  body {
+    background: var(--white);
+    color: var(--text-dark);
+  }
+  .navbar {
+    background: var(--purple);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .nav-links {
+    background: rgba(30,30,40,0.18);
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  .team-card, .mentor-card, .content-section, .footer {
+    background: var(--off-white);
+    color: var(--text-dark);
+    box-shadow: var(--shadow-sm);
+  }
+  .section-title, .section-subtitle {
+    color: var(--text-dark);
+  }
+  .hero-bg img {
+    filter: brightness(0.7) contrast(1.1);
+  }
+  .footer {
+    background: var(--purple-dark);
+    color: var(--text-gray);
+  }
+}
+
 /* --- Reset & Base --- */
 *, *::before, *::after {
     margin: 0;
