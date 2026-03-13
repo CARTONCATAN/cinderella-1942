@@ -80,6 +80,44 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // --- Robot image slider ---
+    const slides = document.querySelectorAll('.slider-slide');
+    const dotsContainer = document.getElementById('sliderDots');
+    const prevBtn = document.querySelector('.slider-prev');
+    const nextBtn = document.querySelector('.slider-next');
+
+    if (slides.length > 0 && dotsContainer) {
+        let current = 0;
+
+        // Create dots
+        slides.forEach((_, i) => {
+            const dot = document.createElement('button');
+            dot.classList.add('slider-dot');
+            if (i === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goTo(i));
+            dotsContainer.appendChild(dot);
+        });
+
+        function goTo(index) {
+            slides[current].classList.remove('active');
+            dotsContainer.children[current].classList.remove('active');
+            current = (index + slides.length) % slides.length;
+            slides[current].classList.add('active');
+            dotsContainer.children[current].classList.add('active');
+            if (prevBtn) prevBtn.disabled = slides.length <= 1;
+            if (nextBtn) nextBtn.disabled = slides.length <= 1;
+        }
+
+        if (prevBtn) prevBtn.addEventListener('click', () => goTo(current - 1));
+        if (nextBtn) nextBtn.addEventListener('click', () => goTo(current + 1));
+
+        // Disable buttons if only one image
+        if (slides.length <= 1) {
+            if (prevBtn) prevBtn.disabled = true;
+            if (nextBtn) nextBtn.disabled = true;
+        }
+    }
+
     // --- Smooth scroll for anchor links ---
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
