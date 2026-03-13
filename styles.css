@@ -1261,11 +1261,11 @@ img {
 }
 
 .slider-img-mobile { display: none; }
-.slider-img-desktop { display: block; }
+.slider-img-desktop { display: block; width: 100%; height: 100%; object-fit: contain; }
 
 @media (max-width: 768px) {
     .slider-img-desktop { display: none; }
-    .slider-img-mobile { display: block; }
+    .slider-img-mobile { display: block; width: 100%; height: 100%; object-fit: contain; }
 }
 
 .robot-slider {
@@ -1295,13 +1295,6 @@ img {
 }
 
 .slider-slide.active {
-    display: block;
-}
-
-.slider-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
     display: block;
 }
 
