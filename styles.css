@@ -1255,13 +1255,13 @@ img {
    RESPONSIVE
    ============== */
 @media (max-width: 968px) {
-    .nav-container { height: 64px; }
+    .nav-container { height: 70px; }
 
-    .nav-logo-img { height: 52px; }
+    .nav-logo-img { height: 58px; }
 
     .nav-links {
         position: fixed;
-        top: 64px;
+        top: 70px;
         left: 0;
         right: 0;
         background: var(--purple);
@@ -1280,7 +1280,7 @@ img {
     .hamburger { display: flex; }
     .nav-brand { display: none; }
 
-    .hero { padding-top: 64px; }
+    .hero { padding-top: 70px; }
 
     .reveal-content { flex-direction: column; gap: 30px; }
     .reveal-video { width: 100%; flex: unset; }
@@ -1319,16 +1319,16 @@ img {
 
     .dept-grid { grid-template-columns: 1fr; }
 
-    .page-header { padding: 100px 0 40px; }
+    .page-header { padding: 110px 0 40px; }
 }
 
 @media (max-width: 640px) {
-    .nav-container { height: 56px; }
-    .nav-logo-img { height: 44px; }
+    .nav-container { height: 68px; }
+    .nav-logo-img { height: 56px; }
 
-    .nav-links { top: 56px; }
+    .nav-links { top: 68px; }
 
-    .hero { padding-top: 56px; min-height: 100svh; }
+    .hero { padding-top: 68px; min-height: 100svh; }
 
     .hero-logo-img { width: min(420px, 90vw); }
 
