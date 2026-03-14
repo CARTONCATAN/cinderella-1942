@@ -815,13 +815,15 @@ img {
 }
 
 /* =====================
-   FOOTER - simple dark bar
-   (matching screenshot: logo + copyright text)
+   FOOTER - adjusted to remove dark/blue stripe
+   Footer background set to white and pinned to bottom
    ===================== */
 .footer {
-    background: #16162A;
+    background: var(--white); /* match page background so no visible dark bar */
     padding: 0;
-    border-top: 1px solid rgba(123,45,142,0.15);
+    border-top: none;
+    box-shadow: none;
+    margin-top: auto; /* ensure footer sits at viewport bottom */
 }
 
 .footer-content { display: none; }
@@ -842,7 +844,7 @@ img {
     opacity: 0.95;
 }
 
-.footer-bottom p { color: rgba(255,255,255,0.7); margin: 0; font-size: 0.9rem; }
+.footer-bottom p { color: var(--text-gray); margin: 0; font-size: 0.9rem; }
 
 .footer-credit {
     font-size: 0.78rem;
