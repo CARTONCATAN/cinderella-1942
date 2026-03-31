@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinderella Team 1942 | FRC Robotics</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="logos_photos/logo2.png" alt="Cinderella 1942" class="nav-logo-img">
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="active">HOME</a></li>
+                <li><a href="about.html">ABOUT THE TEAM</a></li>
+                <li><a href="team.html">TEAM PAGE</a></li>
+                <li><a href="robots.html">OUR ROBOTS</a></li>
+            </ul>
+            <div class="nav-brand">
+                <img src="logos_photos/FIRST_Vertical_RGB_reverse.png" alt="FIRST" class="first-logo-img">
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <img src="logos_photos/gears.png" alt="" class="gears-combined">
+            <img src="logos_photos/CastleTower.png" alt="Castle Tower" class="castle-silhouette">
+        </div>
+        <div class="jet-silhouette"><img src="logos_photos/f15.png" alt="F15" draggable="false"></div>
+        <div class="hero-content">
+            <div class="team-emblem">
+                <img src="logos_photos/LOGO.png" alt="Cinderella Team 1942 Logo" class="hero-logo-img">
+            </div>
+            <h1 class="team-name">CINDERELLA</h1>
+            <p class="team-tagline">FRC Team 1942 &bull; Engineering the Future</p>
+            <div class="hero-buttons">
+                <a href="about.html" class="btn btn-primary">Discover Our Team</a>
+                <a href="robots.html" class="btn btn-outline">See Our Robots</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Scroll Down</span>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid reveal">
+                <div class="stat-card" data-count="20">
+                    <div class="stat-icon"><i class="fas fa-calendar-alt"></i></div>
+                    <div class="stat-number">20+</div>
+                    <div class="stat-label">Years Active</div>
+                </div>
+                <div class="stat-card" data-count="50">
+                    <div class="stat-icon"><i class="fas fa-users"></i></div>
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Team Members</div>
+                </div>
+                <div class="stat-card" data-count="15">
+                    <div class="stat-icon"><i class="fas fa-robot"></i></div>
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Robots Built</div>
+                </div>
+                <div class="stat-card" data-count="30">
+                    <div class="stat-icon"><i class="fas fa-trophy"></i></div>
+                    <div class="stat-number">30+</div>
+                    <div class="stat-label">Awards Won</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Robot Reveal Section -->
+    <section class="robot-reveal-section" id="robot-reveal">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title">ROBOT REVEAL</h2>
+                <div class="title-line"></div>
+            </div>
+            <div class="reveal-content">
+                <div class="reveal-text reveal-left">
+                    <h3>FIRST REBUILT</h3>
+                    <p>The objective of the mission is to score the balls into the hub. Each ball is worth 1 point.</p>
+                    <p>At the end of the game, teams must climb the ladder.</p>
+                    <p>The team with the most points wins the game.</p>
+                </div>
+                <div class="reveal-video reveal-right">
+                    <div class="video-wrapper" style="position:relative;display:inline-block;width:100%;">
+                        <video id="robotVideo" class="yt-thumb-img" style="width:100%;border-radius:12px;display:block;" poster="video/thumbnail/gus.png">
+                            <source src="video/gusbot.mp4" type="video/mp4">
+                        </video>
+                        <div id="videoPlayBtn" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:72px;height:72px;background:rgba(0,0,0,0.65);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background 0.2s;z-index:2;">
+                            <svg viewBox="0 0 24 24" width="36" height="36" fill="white"><polygon points="6,3 20,12 6,21"/></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Preview Section -->
+    <section class="about-preview">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2>WHO WE ARE</h2>
+                    <div class="title-line left"></div>
+                    <p>Team 1942 Cinderella is an FRC (FIRST Robotics Competition) team combining passion, creativity, and engineering excellence. We design, build, and program robots to compete at the highest level.</p>
+                    <p>Our team brings together students with diverse skills — from mechanical engineering to software development, from strategy to media — united by our love of robotics.</p>
+                    <a href="about.html" class="btn btn-primary">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="about-image">
+                    <div class="image-card">
+                        <div class="card-glow"></div>
+                        <i class="fas fa-users-gear"></i>
+                        <h3>Teamwork</h3>
+                        <p>Building robots, building futures</p>
+                    </div>
+                    <div class="image-card">
+                        <div class="card-glow"></div>
+                        <i class="fas fa-lightbulb"></i>
+                        <h3>Innovation</h3>
+                        <p>Pushing boundaries every season</p>
+                    </div>
+                    <div class="image-card">
+                        <div class="card-glow"></div>
+                        <i class="fas fa-code"></i>
+                        <h3>Technology</h3>
+                        <p>Code, CAD, and cutting-edge systems</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sponsors Section -->
+    <section class="sponsors-section" id="sponsors">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title">OUR SPONSORS</h2>
+                <div class="title-line"></div>
+                <p class="section-subtitle">We are grateful for the generous support of our sponsors</p>
+            </div>
+            <div class="sponsors-image-wrap reveal-scale">
+                <img src="logos_photos/sponsers/sponsers.png" alt="Our Sponsors" class="sponsors-image" draggable="false">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-cog"></i>
+                        <span>1942</span>
+                    </div>
+                    <p>CINDERELLA</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="team.html">Team</a></li>
+                        <li><a href="robots.html">Robots</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <img src="logos_photos/logo2.png" alt="Cinderella Logo" class="footer-bottom-logo">
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
