@@ -1,15 +1,3 @@
 {
-  "posts": [
-    {
-      "id": 1,
-      "title": "hii",
-      "tag": "Team",
-      "icon": "fas fa-users",
-      "date": "2026-04-02",
-      "author": "Team 1942",
-      "readTime": "3 min",
-      "summary": "hii2",
-      "image": ""
-    }
-  ]
+  "posts": []
 }
