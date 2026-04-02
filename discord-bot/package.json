@@ -1,0 +1,14 @@
+{
+  "name": "cinderella-1942-discord-bot",
+  "version": "1.0.0",
+  "description": "Discord bot for managing posts on the Cinderella 1942 website",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js",
+    "deploy-commands": "node deploy-commands.js"
+  },
+  "dependencies": {
+    "discord.js": "^14.14.1",
+    "dotenv": "^16.4.5"
+  }
+}

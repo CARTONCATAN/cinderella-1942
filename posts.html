@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts | Cinderella 1942</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="logos_photos/logo2.png" alt="Cinderella 1942" class="nav-logo-img">
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT THE TEAM</a></li>
+                <li><a href="team.html">TEAM PAGE</a></li>
+                <li><a href="robots.html">OUR ROBOTS</a></li>
+                <li><a href="posts.html" class="active">POSTS</a></li>
+            </ul>
+            <div class="nav-brand">
+                <img src="logos_photos/FIRST_Vertical_RGB_reverse.png" alt="FIRST" class="first-logo-img">
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>POSTS</h1>
+        <p>News & Updates from Team 1942</p>
+    </section>
+
+    <!-- Posts Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="posts-grid" id="postsGrid">
+                <!-- Posts loaded dynamically from data/posts.json -->
+            </div>
+            <p id="postsEmpty" style="display:none; text-align:center; color:var(--text-gray); padding:40px 0;">No posts found.</p>
+        </div>
+    </section>
+
+    <script>
+    // Load posts from JSON database
+    (function() {
+        const MONTHS = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
+
+        function createPostCard(post) {
+            const d = new Date(post.date);
+            const day = String(d.getDate()).padStart(2, '0');
+            const month = MONTHS[d.getMonth()];
+
+            const hasImage = post.image && post.image.trim() !== '';
+            const imageContent = hasImage
+                ? `<img src="${post.image}" alt="${post.title}" style="width:100%;height:100%;object-fit:cover;">`
+                : `<i class="${post.icon}"></i>`;
+
+            return `
+            <article class="post-card reveal" data-tag="${post.tag}">
+                <div class="post-card-image">
+                    <div class="post-date-badge">
+                        <span class="post-day">${day}</span>
+                        <span class="post-month">${month}</span>
+                    </div>
+                    ${imageContent}
+                </div>
+                <div class="post-card-body">
+                    <div class="post-tag">${post.tag}</div>
+                    <h3>${post.title}</h3>
+                    <p>${post.summary}</p>
+                    <div class="post-meta">
+                        <span><i class="fas fa-user"></i> ${post.author}</span>
+                        <span><i class="fas fa-clock"></i> ${post.readTime}</span>
+                    </div>
+                </div>
+            </article>`;
+        }
+
+        function initScrollReveal() {
+            const els = document.querySelectorAll('.posts-grid .reveal');
+            if (els.length === 0) return;
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+            els.forEach(el => observer.observe(el));
+        }
+
+        fetch('data/posts.json')
+            .then(res => res.json())
+            .then(data => {
+                const posts = data.posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+                const grid = document.getElementById('postsGrid');
+                if (posts.length === 0) {
+                    document.getElementById('postsEmpty').style.display = '';
+                    document.getElementById('postsEmpty').textContent = 'No posts yet.';
+                } else {
+                    grid.innerHTML = posts.map(createPostCard).join('');
+                    initScrollReveal();
+                }
+            })
+            .catch(() => {
+                document.getElementById('postsEmpty').style.display = '';
+                document.getElementById('postsEmpty').textContent = 'Failed to load posts.';
+            });
+    })();
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-cog"></i>
+                        <span>1942</span>
+                    </div>
+                    <p>CINDERELLA</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="team.html">Team</a></li>
+                        <li><a href="robots.html">Robots</a></li>
+                        <li><a href="posts.html">Posts</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <img src="logos_photos/logo2.png" alt="Cinderella Logo" class="footer-bottom-logo">
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
