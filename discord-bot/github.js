@@ -15,6 +15,7 @@ function writePosts(data) {
 }
 
 function gitPush(commitMessage) {
+    execSync('git pull --rebase', { cwd: REPO_DIR });
     execSync('git add data/posts.json', { cwd: REPO_DIR });
     execSync(`git commit -m "${commitMessage}"`, { cwd: REPO_DIR });
     execSync('git push', { cwd: REPO_DIR });
